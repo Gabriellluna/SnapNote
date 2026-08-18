@@ -62,15 +62,15 @@
                 <div class="separator"></div>
                 <div class="characteristics">
                     <div>
-                        <p>menos</p>
+                        <p>Menos</p>
                         <p>tempo buscando</p>
                     </div>
                     <div>
-                        <p>mais</p>
+                        <p>Mais</p>
                         <p>contexto preservado</p>
                     </div>
                     <div>
-                        <p>sempre</p>
+                        <p>Sempre</p>
                         <p>pronto para revisar</p>
                     </div>
                 </div>
@@ -260,131 +260,69 @@
         </div>
 
     </section>
+    
+    <section id="publico" class="team-section">
+        <div class="team-heading">
+            <div>
+                <p class="section-label"><span></span>NOSSA EQUIPE</p>
+                <h2>Quem dá vida<br><span>ao SnapNote.</span></h2>
+            </div>
+        </div>
+
+        <div class="team-cards">
+            <article class="team-card">
+                <div class="member-image"><span class="member-number">01</span><img
+                        src="./images/group/muriloV.jpeg" alt="Foto de Murilo Vieira dos Reis"></div>
+                <div class="member-info"><h3>Murilo Vieira dos Reis</h3><p>EQUIPE SNAPNOTE · RM573764</p></div>
+            </article>
+            <article class="team-card">
+                <div class="member-image"><span class="member-number">02</span><img
+                        src="./images/group/brunoG.jpeg" alt="Foto de Bruno Guilherme Gonçalves"></div>
+                <div class="member-info"><h3>Bruno Guilherme Gonçalves</h3><p>EQUIPE SNAPNOTE · RM573697</p></div>
+            </article>
+            <article class="team-card">
+                <div class="member-image"><span class="member-number">03</span><img
+                        src="./images/group/gabrielL.jpeg" alt="Foto de Gabriel Luna Maia"></div>
+                <div class="member-info"><h3>Gabriel Luna Maia</h3><p>EQUIPE SNAPNOTE · RM570982</p></div>
+            </article>
+            <article class="team-card">
+                <div class="member-image"><span class="member-number">04</span><img
+                        src="./images/group/joaoL.jpeg" alt="Foto de João Lucas Magordo"></div>
+                <div class="member-info"><h3>João Lucas Magordo</h3><p>EQUIPE SNAPNOTE · RM572419</p></div>
+            </article>
+            <article class="team-card">
+                <div class="member-image"><span class="member-number">05</span><img
+                        src="./images/group/gabrielC.jpeg" alt="Foto de Gabriel Cardoso"></div>
+                <div class="member-info"><h3>Gabriel Cardoso</h3><p>EQUIPE SNAPNOTE · RM571846</p></div>
+            </article>
+        </div>
+    </section>
 
     <section id="contact">
-        <form class="contact" id="formContact">
-            <div class="row">
-                <div>
-                    <label for="nome">Nome Completo:</label>
-                    <input required type="text" id="nome" placeholder="Ex: Gabriel Luna Maia">
-                </div>
-                <div>
-                    <label for="occupation">Cargo / Função:</label>
-                    <input required type="text" id="occupation" placeholder="Ex: Analista de Segurança">
-                </div>
-            </div>
+        <div class="contact-copy">
+            <p class="contact-label"><span></span>CONTATO</p>
+            <h2>Vamos transformar<br>registros em<br><span>memórias?</span></h2>
+            <p class="contact-description">Quer conhecer melhor o projeto ou compartilhar uma ideia? Fale com a nossa
+                equipe.</p>
+            <a class="contact-email" href="mailto:equipe@snapnote.com">equipe@snapnote.com ↗</a>
+        </div>
 
-            <div class="row">
-                <div>
-                    <label for="organization">Organização:</label>
-                    <input type="text" id="organization" placeholder="Ex: Prefeitura de São Paulo">
+        <form class="contact-form" id="formContact">
+            <div class="contact-form-grid">
+                <div class="form-field">
+                    <label for="nome">SEU NOME</label>
+                    <input required type="text" id="nome" name="nome" placeholder="Como podemos chamar você?">
                 </div>
-                <div>
-                    <label for="buyer">Tipo de contratante:</label>
-                    <select required id="buyer">
-                        <option value="">Selecione...</option>
-                        <option value="prefeitura">Prefeitura municipal</option>
-                        <option value="estado">Governo estadual</option>
-                        <option value="defesa">Órgão de Defesa Civil</option>
-                        <option value="empresa">Empresa privada</option>
-                        <option value="ong">ONG / Instituto</option>
-                        <option value="imprensa">Imprensa / pesquisa</option>
-                    </select>
+                <div class="form-field">
+                    <label for="email">SEU E-MAIL</label>
+                    <input required type="email" id="email" name="email" placeholder="voce@email.com">
+                </div>
+                <div class="form-field form-field-full">
+                    <label for="mensagem">MENSAGEM</label>
+                    <textarea required id="mensagem" name="mensagem" placeholder="Conte para a gente..."></textarea>
                 </div>
             </div>
-
-            <div class="row">
-                <div>
-                    <label for="estado">Estado:</label>
-                    <select required id="estado">
-                        <option value="">Selecione...</option>
-                        <option>AC</option>
-                        <option>AL</option>
-                        <option>AM</option>
-                        <option>AP</option>
-                        <option>BA</option>
-                        <option>CE</option>
-                        <option>DF</option>
-                        <option>ES</option>
-                        <option>GO</option>
-                        <option>MA</option>
-                        <option>MG</option>
-                        <option>MS</option>
-                        <option>MT</option>
-                        <option>PA</option>
-                        <option>PB</option>
-                        <option>PE</option>
-                        <option>PI</option>
-                        <option>PR</option>
-                        <option>RJ</option>
-                        <option>RN</option>
-                        <option>RO</option>
-                        <option>RR</option>
-                        <option>RS</option>
-                        <option>SC</option>
-                        <option>SE</option>
-                        <option>SP</option>
-                        <option>TO</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="risco">Risco predominante:</label>
-                    <select required id="risco">
-                        <option value="">Selecione...</option>
-                        <option value="enchente">Enchentes</option>
-                        <option value="deslizamento">Deslizamentos</option>
-                        <option value="ambos">Ambos</option>
-                        <option value="nao-sei">Não sei informar</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row">
-                <div>
-                    <label for="telefone">Telefone / WhatsApp:</label>
-                    <input required type="tel" id="telefone" placeholder="(11) 99999-9999" maxlength="15">
-                </div>
-                <div>
-                    <label for="email">E-mail:</label>
-                    <input required type="email" id="email" placeholder="seu_email@gmail.com">
-                </div>
-            </div>
-
-            <div class="row">
-                <div>
-                    <label for="canal">Melhor canal de retorno:</label>
-                    <select id="canal">
-                        <option value="">Selecione...</option>
-                        <option value="email">E-mail</option>
-                        <option value="telefone">Telefone</option>
-                        <option value="whatsapp">WhatsApp</option>
-                        <option value="videochamada">Videochamada</option>
-                    </select>
-                </div>
-                <div>
-                    <label for="populacao">População:</label>
-                    <select id="populacao">
-                        <option value="">Selecione...</option>
-                        <option value="pequeno">Até 50 mil hab.</option>
-                        <option value="medio">50 mil - 200 mil hab.</option>
-                        <option value="grande">200 mil - 1 milhão hab.</option>
-                        <option value="metropole">Acima de 1 milhão hab.</option>
-                    </select>
-                </div>
-            </div>
-
-            <div class="row">
-                <div class="full">
-                    <label for="mensagem">Mensagem:</label>
-                    <textarea id="mensagem" maxlength="400"
-                        placeholder="Descreva brevemente sua necessidade ou o contexto do seu município..."></textarea>
-                </div>
-            </div>
-
-            <div class="successMessage d-none" id="successBox">
-                <h4>Solicitação enviada! Nossa equipe entrará em contato em breve.</h4>
-            </div>
-            <button type="submit" class="btn">Solicitar contato</button>
+            <button class="contact-submit" type="submit">Enviar mensagem <span>→</span></button>
         </form>
     </section>
     <Footer>

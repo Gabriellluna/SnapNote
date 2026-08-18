@@ -795,12 +795,6 @@ Footer {
     }
 }
 
-.form-title {
-    font-size: var(--p-50);
-    text-align: center;
-    margin: var(--p-20) 0;
-}
-
 form {
     padding: var(--p-20);
     display: flex;
@@ -818,124 +812,212 @@ form {
     }
 }
 
-@keyframes rolar {
-    from {
-        translate: 0;
-    }
-
-    to {
-        translate: -100%;
-    }
-}
-
-.d-none {
-    display: none;
-}
-
-.d-block {
+/* Equipe */
+.team-section {
     display: block;
+    padding-block: var(--p-80);
 }
 
-.correct {
-    background: var(--successMessage75);
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: var(--p-5);
-    border-radius: var(--p-5);
-
-    p {
-        color: var(--bg-white);
-        font-weight: 800;
-    }
+.team-heading {
+    display: grid;
+    grid-template-columns: 1fr 350px;
+    align-items: end;
+    gap: var(--p-30);
+    margin-bottom: var(--p-30);
 }
 
-.incorrect {
-    background: var(--alertMessage75);
-    width: 100%;
-    display: flex;
-    justify-content: start;
-    align-items: center;
-    padding: var(--p-5);
-    border-radius: var(--p-5);
-
-    p {
-        color: var(--bg-white);
-        font-weight: 800;
-    }
+.section-label,
+.contact-label {
+    font-size: 11px;
+    letter-spacing: var(--p-2);
+    margin-bottom: var(--p-15);
 }
 
-#contact {
-    display: flex;
-    justify-content: space-around;
-    align-items: center;
-    background: var(--bg-light-grey);
+.section-label span,
+.contact-label span {
+    display: inline-block;
+    width: 25px;
+    height: var(--p-2);
+    margin-right: var(--p-8);
+    background: currentColor;
 }
 
-.contact {
-    width: 80%;
-    background: var(--bg-white);
-    padding: var(--p-15);
-    border-radius: var(--p-15);
-    border: var(--p-border) solid var(--color-grey);
+.team-heading h2,
+.contact-copy h2 {
+    font-size: clamp(42px, 5vw, 65px);
+    line-height: 1.05;
+    font-weight: 500;
+}
+
+.team-heading h2 span,
+.contact-copy h2 span {
+    color: var(--lime);
+    font-family: Playfair;
+}
+
+.team-description {
+    color: var(--bg-grey);
+    font-size: var(--p-14);
+}
+
+.team-cards {
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
     gap: var(--p-20);
 }
 
-.column {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    width: 30%;
-
-    img {
-        max-width: calc(var(--p-100) * 2);
-    }
+.team-card {
+    grid-column: span 2;
+    overflow: hidden;
+    background: var(--bg-little-white);
+    border: var(--p-border) solid var(--bg-light-grey);
+    border-radius: var(--p-15);
+    transition: transform .3s, box-shadow .3s;
 }
 
-.row {
+.team-card:nth-child(4) {
+    grid-column: 2 / span 2;
+}
+
+.team-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 12px 25px #0002;
+}
+
+.member-image {
+    position: relative;
+    aspect-ratio: 1.08 / 1;
+    overflow: hidden;
+}
+
+.member-image img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center 20%;
+    transition: transform .4s;
+}
+
+.team-card:hover img {
+    transform: scale(1.05);
+}
+
+.member-number {
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    z-index: 1;
+    padding: var(--p-5);
+    color: var(--bg-little-white);
+    background: var(--bg-primary-color);
+    border-radius: 50%;
+    font-size: 9px;
+}
+
+.member-info {
+    padding: var(--p-15);
+}
+
+.member-info h3 {
+    font-size: var(--p-14);
+}
+
+.member-info p {
+    color: var(--bg-light-blue);
+    font-size: 9px;
+}
+
+/* Contato */
+#contact {
+    display: grid;
+    grid-template-columns: 1fr 1.4fr;
+    gap: 70px;
+    background: var(--bg-primary-color);
+    padding-block: var(--p-80);
+}
+
+.contact-copy h2,
+.contact-copy p {
+    color: var(--bg-little-white);
+}
+
+.contact-label {
+    color: var(--bg-light-blue) !important;
+}
+
+.contact-description {
+    margin: var(--p-30) 0 var(--p-20);
+    color: var(--bg-light-grey) !important;
+}
+
+.contact-email {
+    color: var(--lime);
+    border-bottom: var(--p-border) solid var(--lime);
+}
+
+#contact .contact-form {
+    width: 100%;
+    padding: var(--p-30);
+    gap: 25px;
+    background: #171b21;
+    border: var(--p-border) solid #444;
+    border-radius: var(--p-15);
+}
+
+.contact-form-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 25px;
+}
+
+.form-field {
     display: flex;
-    flex-direction: row;
-    justify-content: center;
+    flex-direction: column;
+}
 
-    div {
-        width: 100%;
-        display: flex;
-        flex-direction: column;
-        align-items: start;
-        justify-content: space-around;
+.form-field-full {
+    grid-column: 1 / -1;
+}
 
-        input,
-        label,
-        select,
-        textarea {
-            width: 90%;
-        }
+#contact label {
+    padding: 0;
+    color: var(--bg-little-white);
+    font-size: var(--p-10);
+}
 
-        label,
-        select,
-        textarea {
-            color: var(--bg-primary-color);
-        }
+#contact input,
+#contact textarea {
+    width: 100%;
+    padding: 12px 0;
+    color: var(--bg-little-white);
+    background: transparent;
+    border-bottom: var(--p-border) solid #555;
+    outline: none;
+}
 
-        input,
-        select,
-        textarea {
-            height: calc(var(--p-30) + var(--p-10));
-            border-radius: var(--p-15);
-            border: var(--p-border) solid var(--bg-primary-color);
-            padding: var(--p-5);
-            width: 95%;
-            margin-inline: auto;
-        }
+#contact input:focus,
+#contact textarea:focus {
+    border-color: var(--lime);
+}
 
-        textarea {
-            height: var(--p-100);
-            margin: 0 auto var(--p-20) auto;
-            padding: var(--p-15);
-        }
-    }
+#contact textarea {
+    min-height: var(--p-100);
+    resize: vertical;
+}
+
+.contact-submit {
+    align-self: flex-start;
+    padding: var(--p-14) 22px;
+    background: var(--lime);
+    border-radius: var(--p-30);
+    cursor: pointer;
+    transition: transform .3s, background .3s;
+}
+
+.contact-submit:hover {
+    transform: translateX(6px);
+    background: var(--bg-little-white);
 }
 
 @media(max-width: 1199px) {
@@ -999,12 +1081,6 @@ form {
 
     footer {
         flex-wrap: wrap;
-    }
-
-    .column {
-        img {
-            max-width: var(--p-100);
-        }
     }
 
     .home {
@@ -1081,14 +1157,18 @@ form {
         margin-bottom: var(--p-20);
     }
 
+    .team-heading,
     #contact {
-        flex-direction: column;
+        grid-template-columns: 1fr;
+    }
 
-        .contact,
-        .column {
-            width: 100%;
-            margin: var(--p-10);
-        }
+    .team-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .team-card,
+    .team-card:nth-child(4) {
+        grid-column: span 1;
     }
 
     .home {
@@ -1210,17 +1290,17 @@ form {
         }
     }
 
-    .row {
-        flex-direction: column;
+    .team-cards,
+    .contact-form-grid {
+        grid-template-columns: 1fr;
+    }
 
-        div {
+    .form-field-full {
+        grid-column: auto;
+    }
 
-            input,
-            label,
-            select {
-                width: 100%;
-            }
-        }
+    #contact .contact-form {
+        padding: var(--p-20);
     }
 
     .home {
@@ -1385,12 +1465,6 @@ form {
         height: var(--p-30);
         width: var(--p-30);
     }
-
-    .form-title {
-        font-size: calc(var(--p-30) + var(--p-10));
-        text-align: center;
-        margin: var(--p-20) 0;
-    }
 }
 
 @media(max-width: 370px) {
@@ -1403,7 +1477,4 @@ form {
         flex-direction: column;
     }
 
-    .form-title {
-        font-size: var(--p-30);
-    }
 }
