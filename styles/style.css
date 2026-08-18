@@ -21,6 +21,11 @@ button {
     color: var(--bg-primary-color);
 }
 
+ul, 
+ol{
+    list-style-type: none;
+}
+
 html {
     scroll-behavior: smooth;
 }
@@ -45,6 +50,8 @@ a {
     --bg-light-grey: #ccc;
 
     --lime: #c9f24b;
+
+    --ciano: #b9dcf1;
 
     --p-border: 1px;
     --p-100: 100px;
@@ -396,7 +403,7 @@ button {
         width: 26px;
         height: 2px;
         margin: 0 9px 3px 0;
-        background: currentColor;
+        background: var(--bg-light-blue);
     }
 }
 
@@ -553,7 +560,7 @@ button {
             display: flex;
             flex-direction: column;
             align-items: start;
-            justify-content: center;
+            justify-content: start;
 
             strong {
                 color: var(--lime);
@@ -651,12 +658,12 @@ button {
         color: var(--bg-white);
     }
 
-    h2{
+    h2 {
         font-size: var(--p-20);
         margin-bottom: var(--p-10);
     }
 
-    p{
+    p {
         font-size: var(--p-14);
         line-height: 1.2;
     }
@@ -672,15 +679,119 @@ button {
     align-items: center;
 }
 
-.text {
-    max-width: 50%;
+.real-example {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    border-radius: var(--p-20);
+}
+
+.example {
+    background: var(--ciano);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: var(--p-30);
+    position: relative;
+
+    .decoration-note{
+        bottom: var(--p-20);
+        right: var(--p-20);
+    }
+
+    .card {
+        height: 100%;
+        transform: rotate(-4deg);
+        width: 75%;
+        background: var(--bg-white);
+        display: grid;
+        padding: var(--p-10);
+        grid-template-rows: repeat(2, 1fr);
+        position: relative;
+    }
+}
+
+.corner {
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border: var(--p-border) solid var(--bg-light-blue);
+    z-index: 2;
+}
+
+.corner-1 {
+    top: var(--p-5);
+    left: var(--p-5);
+    border-width: var(--p-5) 0 0 var(--p-5);
+}
+
+.corner-2 {
+    top: var(--p-5);
+    right: var(--p-5);
+    border-width: var(--p-5) var(--p-5) 0 0;
+}
+
+.corner-3 {
+    bottom: var(--p-5);
+    right: var(--p-5);
+    border-width: 0 var(--p-5) var(--p-5) 0;
+}
+
+.corner-4 {
+    bottom: var(--p-5);
+    left: var(--p-5);
+    border-width: 0 0 var(--p-5) var(--p-5);
+}
+
+.card-1 {
+    height: 100%;
+    width: 100%;
+    font-size: var(--p-30);
+    display: flex;
+    align-items: end;
+    justify-content: center;
+}
+
+.card-2 {
+    height: 100%;
+    width: 100%;
+    font-size: var(--p-30);
+    border-top: var(--p-2) solid var(--lime);
+    display: flex;
+    align-items: start;
+    justify-content: center;
+}
+
+.system {
+    background: var(--bg-white);
+    padding: var(--p-30);
     display: flex;
     flex-direction: column;
-
-    p {
+    align-items: start;
+    justify-content: center;
+    h3{
+        font-size: var(--p-30);
+        font-weight: 600;
+    }
+    .text{
+        color: var(--bg-grey);
         margin-top: var(--p-20);
-        color: var(--color-grey);
-        font-size: var(--p-20);
+    }
+    ul{
+        li{
+            display: flex;
+            align-items: center;
+            gap: var(--p-10);
+            .green-circle{
+                height: var(--p-20);
+                width: var(--p-20);
+                color: var(--bg-light-blue);
+                font-size: var(--p-15);
+            }
+            p{
+                font-weight: bold;
+            }
+        }
     }
 }
 
@@ -876,7 +987,7 @@ form {
 }
 
 .team-card:nth-child(4) {
-    grid-column: 2 / span 2;
+    grid-column: 2 / 4;
 }
 
 .team-card:hover {
@@ -895,7 +1006,7 @@ form {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    object-position: center 20%;
+    object-position: center;
     transition: transform .4s;
 }
 
@@ -912,7 +1023,7 @@ form {
     color: var(--bg-little-white);
     background: var(--bg-primary-color);
     border-radius: 50%;
-    font-size: 9px;
+    font-size: var(--p-10);
 }
 
 .member-info {
@@ -925,14 +1036,13 @@ form {
 
 .member-info p {
     color: var(--bg-light-blue);
-    font-size: 9px;
+    font-size: var(--p-10);
 }
 
-/* Contato */
 #contact {
     display: grid;
     grid-template-columns: 1fr 1.4fr;
-    gap: 70px;
+    gap: calc(var(--p-80) - var(--p-10));
     background: var(--bg-primary-color);
     padding-block: var(--p-80);
 }
@@ -1021,25 +1131,6 @@ form {
 }
 
 @media(max-width: 1199px) {
-    .text {
-        min-width: 100%;
-    }
-
-    .article {
-        text-align: start !important;
-    }
-
-    .flood {
-        flex-direction: column;
-
-        img {
-            max-width: 100%;
-        }
-    }
-
-    .cards {
-        width: 100%;
-    }
 
     .btn-header {
         display: none;
@@ -1049,28 +1140,8 @@ form {
         display: none;
     }
 
-    .rect {
-        height: var(--p-50);
-        width: var(--p-50);
-    }
-
     .call-to-action {
         max-width: 100%;
-    }
-
-    .moon {
-        flex-direction: column;
-
-        img {
-            max-width: 100%;
-            padding: var(--p-15);
-        }
-
-        .text {
-            p {
-                min-width: 100%;
-            }
-        }
     }
 
     .footer-section {
@@ -1114,6 +1185,14 @@ form {
     .problem-grid {
         grid-template-columns: 1fr;
     }
+
+    .solution-backlog {
+        grid-template-columns: 1fr;
+    }
+
+    .real-example{
+        grid-template-columns: 1fr;
+    }
 }
 
 @media(max-width: 991px) {
@@ -1123,29 +1202,6 @@ form {
 
     .nav-mobile-menu {
         display: flex;
-    }
-
-    .moon-grid {
-        grid-template-columns: 1fr 1fr;
-    }
-
-    .publico {
-        flex-direction: column;
-        padding: 0;
-    }
-
-    .publico-content {
-        width: 100%;
-        margin: var(--p-20) 0;
-    }
-
-    .aplicacao-exemplos {
-        flex-direction: column;
-        align-items: center;
-    }
-
-    .exemplo {
-        width: 100%;
     }
 
     .aplicacao-call-to-action {
@@ -1284,12 +1340,6 @@ form {
         font-size: var(--p-30);
     }
 
-    .text {
-        p {
-            font-size: var(--p-15);
-        }
-    }
-
     .team-cards,
     .contact-form-grid {
         grid-template-columns: 1fr;
@@ -1385,10 +1435,6 @@ form {
 
     .title {
         font-size: var(--p-50);
-    }
-
-    .moon-grid {
-        grid-template-columns: 1fr;
     }
 
     .aplicacao-image {
