@@ -49,6 +49,8 @@ a {
 
     --bg-grey: #5E525B;
 
+    --bg-medium-grey: rgb(73, 73, 73);
+
     --bg-orange: #ffaf03;
 
     --bg-light-grey: #ccc;
@@ -965,7 +967,7 @@ button {
 
     div:last-child {
         border-radius: var(--p-15);
-        background-color: rgb(73, 73, 73);
+        background-color: var(--bg-medium-grey);
     }
 
     div:first-child {
@@ -975,11 +977,59 @@ button {
 
         div {
             border-radius: var(--p-15);
-            background-color: rgb(73, 73, 73);
+            background-color: var(--bg-medium-grey);
             display: flex;
             justify-content: center;
             align-items: center;
         }
+    }
+}
+
+.galery2-section {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    background: var(--bg-light-blue);
+}
+
+.galery2-phrase {
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    h2 {
+        color: var(--bg-white);
+        font-size: calc(var(--p-80) - var(--p-20));
+
+        .differ-font {
+            color: var(--lime);
+        }
+    }
+}
+
+.galery2-content {
+    display: flex;
+    flex-direction: column;
+    gap: var(--p-15);
+
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding-block: var(--p-15);
+
+        p {
+            color: var(--bg-white);
+        }
+
+        p:first-child {
+            color: var(--lime);
+        }
+    }
+
+    div:nth-child(2) {
+        border-bottom: var(--p-border) solid var(--bg-white);
+        border-top: var(--p-border) solid var(--bg-white);
     }
 }
 
