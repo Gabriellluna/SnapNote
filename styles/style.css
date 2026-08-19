@@ -21,8 +21,8 @@ button {
     color: var(--bg-primary-color);
 }
 
-ul, 
-ol{
+ul,
+ol {
     list-style-type: none;
 }
 
@@ -39,6 +39,8 @@ a {
 
     --bg-little-white: #F9FAFB;
 
+    --bg-pure-white: #FFFFFF;
+
     --bg-primary-color: #12151b;
 
     --bg-light-yellow: #FACC15;
@@ -46,6 +48,8 @@ a {
     --bg-light-blue: #1657b8;
 
     --bg-grey: #5E525B;
+
+    --bg-orange: #ffaf03;
 
     --bg-light-grey: #ccc;
 
@@ -95,7 +99,7 @@ p {
 
 section {
     width: 100%;
-    padding: var(--p-50) calc(var(--p-100)*2);
+    padding: var(--p-50) var(--p-80);
     background: var(--bg-white);
     display: flex;
     align-items: center;
@@ -694,7 +698,7 @@ button {
     padding: var(--p-30);
     position: relative;
 
-    .decoration-note{
+    .decoration-note {
         bottom: var(--p-20);
         right: var(--p-20);
     }
@@ -769,29 +773,152 @@ button {
     flex-direction: column;
     align-items: start;
     justify-content: center;
-    h3{
+
+    h3 {
         font-size: var(--p-30);
         font-weight: 600;
     }
-    .text{
+
+    .text {
         color: var(--bg-grey);
         margin-top: var(--p-20);
     }
-    ul{
-        li{
+
+    ul {
+        li {
             display: flex;
             align-items: center;
             gap: var(--p-10);
-            .green-circle{
+
+            .green-circle {
                 height: var(--p-20);
                 width: var(--p-20);
                 color: var(--bg-light-blue);
                 font-size: var(--p-15);
             }
-            p{
+
+            p {
                 font-weight: bold;
             }
         }
+    }
+}
+
+.public-section {
+    display: grid;
+    grid-template-columns: .8fr 1.2fr;
+    gap: var(--p-50);
+}
+
+.public-phrase {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    justify-content: center;
+
+    h2 {
+        font-size: calc(var(--p-80) - var(--p-10));
+    }
+
+    p {
+        color: var(--bg-grey);
+        font-size: var(--p-20);
+        margin-top: var(--p-30);
+    }
+}
+
+.comment{
+    color: var(--bg-primary-color) !important;
+    font-size: var(--p-30) !important;
+    font-weight: bold;
+}
+
+.quote{
+    color: var(--bg-light-blue);
+    font-family: Playfair;
+    font-weight: 600;
+    font-size: var(--p-50);
+}
+
+.public-people{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--p-30);
+    height: 90%;
+}
+
+.person{
+    height: 100%;
+    width: 90%;
+    background: var(--bg-light-blue);
+    border-radius: var(--p-15);
+    padding: var(--p-30);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    margin: auto;
+    .separator{
+        margin-block: var(--p-30);
+    }
+}
+
+.header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    .green-circle{
+        p{
+            color: var(--bg-light-blue);
+        }
+    }
+
+    p{
+        color: var(--bg-white);
+        font-weight: bold;
+    }
+}
+
+.notation{
+    color: var(--lime) !important;
+    font-weight: bold;
+    margin-block: var(--p-20);
+}
+
+.person-characteristics{
+    margin-left: var(--p-20);
+    margin-bottom: var(--p-20);
+    list-style-type: disc;
+    li{
+        color: var(--bg-white);
+    }
+}
+
+
+.content{
+    margin-top: var(--p-50);
+    *{
+        color: var(--bg-white);
+    }
+}
+
+.person.professional{
+    background: var(--bg-pure-white);
+    .header{
+        .green-circle{
+            background: var(--bg-orange);
+            p{
+                color: var(--bg-pure-white);
+            }
+        }
+    }
+    *{
+        color: var(--bg-primary-color);
+    }
+
+    .notation{
+        color: var(--bg-light-blue) !important;
     }
 }
 
@@ -1135,6 +1262,10 @@ form {
 
 @media(max-width: 1199px) {
 
+    section{
+        padding-inline: var(--p-30);
+    }
+
     .btn-header {
         display: none;
     }
@@ -1180,10 +1311,10 @@ form {
     }
 
     .solution-backlog {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
-    .real-example{
+    .real-example {
         grid-template-columns: 1fr;
     }
 }
@@ -1263,6 +1394,10 @@ form {
         left: 10%;
     }
 
+    .public-people{
+        grid-template-columns: 1fr;
+    }
+
 }
 
 
@@ -1302,6 +1437,10 @@ form {
         grid-column: 1 / -1;
         text-align: left;
     }
+
+    .public-section{
+        grid-template-columns: 1fr;
+    }
 }
 
 @media (max-width: 650px) {
@@ -1339,12 +1478,6 @@ form {
 
     #contact .contact-form {
         padding: var(--p-20);
-    }
-
-    .home {
-        min-height: auto;
-        padding-top: var(--p-100);
-        padding-bottom: var(--p-50);
     }
 
     .call-to-action {
@@ -1424,57 +1557,25 @@ form {
     .footer-copy {
         grid-column: auto;
     }
+
+    .solution-backlog {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 @media(max-width: 500px) {
-    .rect {
-        height: calc(var(--p-50) - var(--p-10));
-        width: calc(var(--p-50) - var(--p-10));
+
+    section{
+        padding-inline: var(--p-10);
     }
 
     .title {
         font-size: var(--p-50);
     }
 
-    .aplicacao-image {
-        height: calc(var(--p-100) * 2);
-    }
-
-    .objectives-grid {
-        margin: var(--p-20) 0;
-    }
-
-    .objective-img {
-        margin: var(--p-8);
-    }
-
-    .objective {
-        padding: var(--p-15);
-
-        p {
-            display: none;
-        }
-    }
-
-    section {
-        padding: var(--p-30);
-    }
-
-    .aplicacao-cta-buttons {
-        flex-direction: column;
-    }
-
     .call-to-action {
         padding: 0;
-    }
-
-    #top {
-        padding-top: var(--p-100);
-    }
-
-    .home {
-        padding-top: var(--p-100);
-        padding-bottom: var(--p-30);
     }
 
     .interface {
@@ -1505,19 +1606,7 @@ form {
     }
 }
 
-@media(max-width: 430px) {
-    .rect {
-        height: var(--p-30);
-        width: var(--p-30);
-    }
-}
-
 @media(max-width: 370px) {
-    .grid {
-        transform: rotate(90deg);
-        grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr 1fr;
-    }
-
     .buttons {
         flex-direction: column;
     }
