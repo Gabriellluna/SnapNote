@@ -51,6 +51,8 @@ a {
 
     --bg-medium-grey: rgb(73, 73, 73);
 
+    --bg-medium-black: #20232A;
+
     --bg-orange: #ffaf03;
 
     --bg-light-grey: #ccc;
@@ -964,10 +966,21 @@ button {
     grid-template-columns: repeat(2, 1fr);
     gap: var(--p-15);
     width: 100%;
+    padding: var(--p-20) var(--p-100);
 
-    div:last-child {
+    .image-border {
         border-radius: var(--p-15);
-        background-color: var(--bg-medium-grey);
+        background-color: var(--bg-medium-black);
+        border: var(--p-border) solid var(--bg-medium-grey);
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        position: relative;
+
+        img {
+            max-width: 90%;
+        }
     }
 
     div:first-child {
@@ -975,20 +988,65 @@ button {
         grid-template-rows: repeat(2, 1fr);
         gap: var(--p-15);
 
-        div {
+        .image-border {
             border-radius: var(--p-15);
-            background-color: var(--bg-medium-grey);
+            background-color: var(--bg-medium-black);
+            border: var(--p-border) solid var(--bg-medium-grey);
             display: flex;
+            flex-direction: column;
             justify-content: center;
             align-items: center;
         }
     }
 }
 
+.images-subtitles {
+    background: linear-gradient(transparent, rgba(0, 0, 0, 1) 35%);
+    display: flex;
+    padding: var(--p-20);
+    position: absolute;
+    width: 100%;
+    bottom: 0;
+    left: 0;
+    bottom: 0;
+    border-radius: 0 0 var(--p-15) var(--p-15);
+    gap: var(--p-30);
+
+    div {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        justify-content: center;
+
+        h2 {
+            color: var(--bg-white);
+            font-size: var(--p-14);
+            font-weight: bold;
+        }
+
+        p {
+            color: var(--bg-grey);
+            font-weight: bold;
+            font-size: calc(var(--p-10) + var(--p-border));
+        }
+    }
+}
+
+.number {
+    color: var(--lime);
+    font-size: var(--p-15);
+}
+
 .galery2-section {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     background: var(--bg-light-blue);
+    gap: var(--p-20);
+
+    div {
+        gap: var(--p-15);
+        text-align: end;
+    }
 }
 
 .galery2-phrase {
@@ -999,7 +1057,8 @@ button {
 
     h2 {
         color: var(--bg-white);
-        font-size: calc(var(--p-80) - var(--p-20));
+        font-size: clamp(var(--p-50), 5vw + var(--p-15), calc(var(--p-80) - var(--p-10)));
+        text-align: start;
 
         .differ-font {
             color: var(--lime);
@@ -1164,7 +1223,6 @@ form {
     }
 }
 
-/* Equipe */
 .team-section {
     display: block;
     padding-block: var(--p-80);
@@ -1180,7 +1238,7 @@ form {
 
 .section-label,
 .contact-label {
-    font-size: 11px;
+    font-size: var(--p-10);
     letter-spacing: var(--p-2);
     margin-bottom: var(--p-15);
 }
@@ -1188,7 +1246,7 @@ form {
 .section-label span,
 .contact-label span {
     display: inline-block;
-    width: 25px;
+    width: var(--p-20);
     height: var(--p-2);
     margin-right: var(--p-8);
     background: currentColor;
@@ -1371,10 +1429,27 @@ form {
     background: var(--bg-little-white);
 }
 
-@media(max-width: 1199px) {
+@media(max-width: 1450px) {
+    .galery-images {
+        padding: var(--p-20) var(--p-border);
+    }
+}
 
+@media(max-width: 1250px) {
     section {
         padding-inline: var(--p-30);
+    }
+}
+
+@media(max-width: 1199px) {
+
+    .galery-images {
+        grid-template-columns: 1fr;
+
+        img {
+            margin-bottom: var(--p-50);
+            margin-top: var(--p-15);
+        }
     }
 
     .btn-header {
@@ -1551,6 +1626,23 @@ form {
 
     .public-section {
         grid-template-columns: 1fr;
+        gap: var(--p-border);
+    }
+
+    .public-people{
+        gap: var(--p-10);
+        height: 100%;
+    }
+
+    .galery2-section {
+        grid-template-columns: 1fr;
+    }
+
+    .galery2-content {
+        div {
+            flex-direction: column;
+            text-align: start;
+        }
     }
 }
 
@@ -1678,7 +1770,7 @@ form {
 @media(max-width: 500px) {
 
     section {
-        padding-inline: var(--p-10);
+        padding-inline: var(--p-20);
     }
 
     .title {
