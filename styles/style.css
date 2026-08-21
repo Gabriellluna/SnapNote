@@ -964,6 +964,7 @@ button {
 .galery-images {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
     gap: var(--p-15);
     width: 100%;
     padding: var(--p-20) var(--p-100);
@@ -983,20 +984,8 @@ button {
         }
     }
 
-    div:first-child {
-        display: grid;
-        grid-template-rows: repeat(2, 1fr);
-        gap: var(--p-15);
-
-        .image-border {
-            border-radius: var(--p-15);
-            background-color: var(--bg-medium-black);
-            border: var(--p-border) solid var(--bg-medium-grey);
-            display: flex;
-            flex-direction: column;
-            justify-content: center;
-            align-items: center;
-        }
+    .image-border:nth-child(2) {
+        grid-row: span 2;
     }
 }
 
@@ -1629,7 +1618,7 @@ form {
         gap: var(--p-border);
     }
 
-    .public-people{
+    .public-people {
         gap: var(--p-10);
         height: 100%;
     }
