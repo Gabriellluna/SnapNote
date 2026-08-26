@@ -16,8 +16,6 @@ window.addEventListener("scroll", () => {
     });
 
     navLinks.forEach(link => {
-        link.classList.remove("active");
-
         if (link.getAttribute("href") === `#${activeSection}`) {
             link.classList.add("activeLink");
         } else {
