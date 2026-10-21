@@ -28,12 +28,33 @@ window.addEventListener("scroll", () => {
     });
 });
 
-form.addEventListener("submit", (e) => {
+form.addEventListener("submit", async (e) => {
     e.preventDefault()
-    window.alert("Dados enviados com sucesso!")
-    input_email.value = ""
-    input_nome.value = ""
-    input_mensagem.value = ""
+    const submitButton = form.querySelector("button[type='submit']")
+    submitButton.disabled = true
+
+    try {
+        const response = await fetch("https://api.web3forms.com/submit", {
+            method: "POST",
+            headers: { "Content-Type": "application/json", Accept: "application/json" },
+            body: JSON.stringify({
+                access_key: typeof WEB3FORMS_ACCESS_KEY !== "undefined" ? WEB3FORMS_ACCESS_KEY : "",
+                subject: "Novo contato pelo site SnapNote",
+                nome: input_nome.value,
+                email: input_email.value,
+                mensagem: input_mensagem.value
+            })
+        })
+        const result = await response.json()
+
+        if (!result.success) throw new Error(result.message)
+        window.alert("Mensagem enviada! Responderemos em breve.")
+        form.reset()
+    } catch {
+        window.alert("Não foi possível enviar a mensagem. Tente novamente ou escreva para equipe@snapnote.com.")
+    } finally {
+        submitButton.disabled = false
+    }
 })
 
 const toggleMenu = (open) => {
