@@ -28,10 +28,15 @@ ol {
 
 html {
     scroll-behavior: smooth;
+    scroll-padding-top: 90px;
 }
 
 a {
     text-decoration: none;
+}
+
+img {
+    max-width: 100%;
 }
 
 :root {
@@ -188,6 +193,7 @@ section {
     left: -50%;
     height: 100dvh;
     width: 50%;
+    visibility: hidden;
     transition: .5s ease-in;
 
     div {
@@ -239,6 +245,7 @@ section {
 
 .active {
     left: 0 !important;
+    visibility: visible;
 }
 
 .nav-mobile-menu {
@@ -333,7 +340,7 @@ button {
 }
 
 .title {
-    font-size: var(--p-80);
+    font-size: clamp(42px, 4vw + var(--p-20), var(--p-80));
     line-height: 1.2;
     text-align: start;
     font-weight: 500;
@@ -496,7 +503,7 @@ button {
 }
 
 .problem-title {
-    font-size: var(--p-50);
+    font-size: clamp(var(--p-20), 2.5vw + var(--p-14), var(--p-50));
 
     h2 {
         color: var(--bg-white);
@@ -562,7 +569,7 @@ button {
     align-items: center;
 
     h2 {
-        font-size: var(--p-50);
+        font-size: clamp(36px, 3vw + var(--p-20), var(--p-50));
         color: var(--bg-white);
 
         span {
@@ -769,7 +776,7 @@ button {
     justify-content: center;
 
     h2 {
-        font-size: calc(var(--p-80) - var(--p-10));
+        font-size: clamp(40px, 4vw + var(--p-20), calc(var(--p-80) - var(--p-10)));
     }
 
     p {
@@ -894,7 +901,7 @@ button {
 
     h2 {
         color: var(--bg-white);
-        font-size: calc(var(--p-80) - var(--p-20));
+        font-size: clamp(40px, 4vw + var(--p-15), calc(var(--p-80) - var(--p-20)));
 
         .differ-font {
             color: var(--lime);
@@ -930,8 +937,9 @@ button {
         }
     }
 
-    .image-border:nth-child(2) {
-        grid-row: span 2;
+    .image-border:nth-child(3) {
+        grid-column: 2;
+        grid-row: 1 / span 2;
     }
 }
 
@@ -1353,7 +1361,7 @@ form {
 
 @media(max-width: 1450px) {
     .galery-images {
-        padding: var(--p-20) var(--p-border);
+        padding: var(--p-20) 0;
     }
 }
 
@@ -1367,19 +1375,21 @@ form {
 
     .galery-images {
         grid-template-columns: 1fr;
+        grid-template-rows: auto;
 
         img {
-            margin-bottom: var(--p-50);
+            margin-bottom: var(--p-80);
             margin-top: var(--p-15);
+        }
+
+        .image-border:nth-child(3) {
+            grid-column: auto;
+            grid-row: auto;
         }
     }
 
     .number {
         display: none;
-    }
-
-    .call-to-action {
-        max-width: 100%;
     }
 
     .home {
@@ -1420,6 +1430,14 @@ form {
 
     .real-example {
         grid-template-columns: 1fr;
+    }
+
+    .example {
+        min-height: 320px;
+
+        .card {
+            min-height: 220px;
+        }
     }
 }
 
@@ -1512,12 +1530,28 @@ form {
 
     .public-section {
         grid-template-columns: 1fr;
-        gap: var(--p-border);
+        gap: var(--p-30);
     }
 
     .public-people {
         gap: var(--p-10);
         height: 100%;
+    }
+
+    .person {
+        width: 100%;
+    }
+
+    .solution-header,
+    .galery-phrase {
+        flex-direction: column;
+        align-items: start;
+        gap: var(--p-15);
+
+        p {
+            width: 100%;
+            text-align: start;
+        }
     }
 
     .galery2-section {
@@ -1527,6 +1561,7 @@ form {
     .galery2-content {
         div {
             flex-direction: column;
+            align-items: start;
             text-align: start;
         }
     }
@@ -1534,14 +1569,25 @@ form {
 
 @media (max-width: 650px) {
 
-    .title {
-        font-size: var(--p-50);
+    .mobile-menu {
+        width: 75%;
+        left: -75%;
     }
 
-    .call-to-action {
-        p {
-            font-size: var(--p-15);
-        }
+    .problem-explanation div {
+        grid-template-columns: 1fr;
+        gap: var(--p-20);
+    }
+
+    .characteristics {
+        flex-wrap: wrap;
+        justify-content: space-between;
+        gap: var(--p-15);
+        padding-inline: 0;
+    }
+
+    .comment {
+        font-size: var(--p-20) !important;
     }
 
     .team-cards,
@@ -1557,18 +1603,12 @@ form {
         padding: var(--p-20);
     }
 
-    .call-to-action {
-        width: 100%;
-        max-width: 100%;
-    }
-
     .impact {
         font-size: 12px;
         line-height: 1.6;
     }
 
     .title {
-        font-size: 42px;
         line-height: 1.1;
     }
 
@@ -1642,14 +1682,6 @@ form {
         padding-inline: var(--p-20);
     }
 
-    .title {
-        font-size: var(--p-50);
-    }
-
-    .call-to-action {
-        padding: 0;
-    }
-
     .interface {
         min-height: 380px;
     }
@@ -1670,17 +1702,38 @@ form {
     }
 
     .decoration-note {
-        right: -5%;
+        right: 0;
     }
 
     .decoration-ai {
-        left: -5%;
+        left: 0;
+    }
+
+    .example .decoration-note {
+        right: var(--p-5);
+        bottom: var(--p-5);
+        transform-origin: right bottom;
     }
 }
 
 @media(max-width: 370px) {
     .buttons {
         flex-direction: column;
+
+        a,
+        button {
+            width: 100%;
+        }
     }
 
+}
+
+@media (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
+    }
+
+    * {
+        transition: none !important;
+    }
 }

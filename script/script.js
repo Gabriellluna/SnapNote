@@ -36,7 +36,23 @@ form.addEventListener("submit", (e) => {
     input_mensagem.value = ""
 })
 
+const toggleMenu = (open) => {
+    mobileMenu.classList.toggle("active", open)
+    navMobileMenu.classList.toggle("close", open)
+    menuButton.setAttribute("aria-expanded", open)
+    menuButton.setAttribute("aria-label", open ? "Fechar menu" : "Abrir menu")
+}
+
 menuButton.addEventListener("click", () => {
-    mobileMenu.classList.toggle("active")
-    navMobileMenu.classList.toggle("close")
+    toggleMenu(!mobileMenu.classList.contains("active"))
+})
+
+navLinks.forEach(link => {
+    link.addEventListener("click", () => toggleMenu(false))
+})
+
+window.addEventListener("resize", () => {
+    if (window.innerWidth > 991) {
+        toggleMenu(false)
+    }
 })
