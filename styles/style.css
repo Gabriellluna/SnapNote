@@ -164,7 +164,8 @@ section {
         }
     }
 
-    li:last-child {
+    li:last-child a {
+        display: inline-block;
         padding: var(--p-15);
         background: var(--bg-light-yellow);
         color: var(--bg-little-white);
@@ -173,11 +174,14 @@ section {
         border: var(--p-2) solid var(--bg-light-yellow);
     }
 
-    li:last-child:hover {
-        padding: var(--p-15);
+    li:last-child a:hover,
+    li:last-child a.activeLink {
         background: var(--bg-white);
         color: var(--bg-light-yellow);
-        border-radius: var(--p-30);
+    }
+
+    li:last-child a.activeLink::after {
+        display: none;
     }
 }
 
@@ -1359,6 +1363,122 @@ form {
     background: var(--bg-little-white);
 }
 
+.access-section {
+    margin-top: 90px;
+    min-height: calc(100dvh - 90px);
+    flex-direction: column;
+    align-items: start;
+    justify-content: start;
+    gap: var(--p-50);
+}
+
+.access-heading {
+    max-width: 720px;
+
+    .color-grey {
+        margin-top: var(--p-20);
+        font-size: var(--p-20);
+    }
+}
+
+.access-cards {
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1.3fr 1fr;
+    gap: var(--p-20);
+}
+
+.access-card {
+    position: relative;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: start;
+    gap: var(--p-20);
+    padding: var(--p-50);
+    border-radius: var(--p-15);
+
+    h2 {
+        font-size: clamp(28px, 2vw + var(--p-15), 40px);
+        font-weight: 500;
+    }
+
+    p {
+        max-width: 420px;
+    }
+}
+
+.access-card.prototype {
+    min-height: 380px;
+    padding-right: 300px;
+    background: var(--bg-light-blue);
+
+    h2,
+    p {
+        color: var(--bg-white);
+    }
+
+    img {
+        position: absolute;
+        right: var(--p-50);
+        top: var(--p-50);
+        width: 220px;
+        transform: rotate(6deg);
+    }
+}
+
+.access-card.code {
+    background: var(--bg-primary-color);
+
+    svg {
+        color: var(--bg-white);
+    }
+
+    h2 {
+        color: var(--bg-white);
+    }
+
+    p {
+        color: var(--bg-light-grey);
+    }
+
+    .access-link {
+        background: var(--bg-white);
+    }
+
+    .access-link:hover {
+        background: var(--lime);
+    }
+}
+
+.access-link {
+    margin-top: auto;
+    padding: var(--p-15) var(--p-30);
+    background: var(--lime);
+    color: var(--bg-primary-color);
+    border-radius: var(--p-50);
+    font-family: Mansrope;
+    font-size: var(--p-15);
+    font-weight: bold;
+    transition: background .3s;
+}
+
+.access-link:hover {
+    background: var(--bg-white);
+}
+
+.access-card.prototype .access-note {
+    margin-top: calc(var(--p-10) * -1);
+    color: var(--ciano);
+    font-size: 12px;
+    line-height: 1.5;
+}
+
+.access-link:focus-visible {
+    outline: var(--p-2) solid var(--lime);
+    outline-offset: var(--p-5);
+}
+
 @media(max-width: 1450px) {
     .galery-images {
         padding: var(--p-20) 0;
@@ -1511,6 +1631,10 @@ form {
         grid-template-columns: 1fr;
     }
 
+    .access-cards {
+        grid-template-columns: 1fr;
+    }
+
 }
 
 
@@ -1588,6 +1712,23 @@ form {
 
     .comment {
         font-size: var(--p-20) !important;
+    }
+
+    .access-card {
+        padding: var(--p-30);
+    }
+
+    .access-card.prototype {
+        padding-right: var(--p-30);
+        padding-bottom: 300px;
+
+        img {
+            top: auto;
+            bottom: -90px;
+            right: 50%;
+            width: 180px;
+            transform: translateX(50%) rotate(6deg);
+        }
     }
 
     .team-cards,

@@ -20,6 +20,8 @@ window.addEventListener("scroll", () => {
     });
 
     navLinks.forEach(link => {
+        if (!link.getAttribute("href").startsWith("#")) return;
+
         if (link.getAttribute("href") === `#${activeSection}`) {
             link.classList.add("activeLink");
         } else {
@@ -28,7 +30,7 @@ window.addEventListener("scroll", () => {
     });
 });
 
-form.addEventListener("submit", async (e) => {
+form?.addEventListener("submit", async (e) => {
     e.preventDefault()
     const submitButton = form.querySelector("button[type='submit']")
     submitButton.disabled = true

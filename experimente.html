@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Experimente o SnapNote</title>
+    <link rel="stylesheet" href="styles/style.css">
+</head>
+
+<body>
+    <header class="header-nav">
+        <a href="index.html#top">
+            <div class="header-logo">
+                <img src="./images/logo.png" alt="Logotipo do SnapNote">
+                <p>Snap<span>Note</span></p>
+            </div>
+        </a>
+        <nav>
+            <ul class="nav-hero-menu">
+                <li><a href="index.html#top">A Solução</a></li>
+                <li><a href="index.html#publico">Público-alvo</a></li>
+                <li><a href="index.html#galeria">Galeria</a></li>
+                <li><a href="index.html#equipe">Nossa Equipe</a></li>
+                <li><a href="experimente.html" class="activeLink" aria-current="page">Experimente</a></li>
+                <li><a href="index.html#contact">Contato</a></li>
+            </ul>
+        </nav>
+        <button id="menuButton" class="nav-mobile-menu" aria-label="Abrir menu" aria-expanded="false">
+            <div></div>
+            <div></div>
+            <div></div>
+        </button>
+        <div class="mobile-menu">
+            <div>
+                <a href="index.html#top">
+                    <img src="./images/logo-white.png" alt="Logotipo do SnapNote">
+                </a>
+            </div>
+            <ul class="nav-hero-menu">
+                <li><a href="index.html#top">A Solução</a></li>
+                <li><a href="index.html#publico">Público-alvo</a></li>
+                <li><a href="index.html#galeria">Galeria</a></li>
+                <li><a href="index.html#equipe">Nossa Equipe</a></li>
+                <li><a href="experimente.html" class="activeLink" aria-current="page">Experimente</a></li>
+                <li><a href="index.html#contact">Contato</a></li>
+            </ul>
+        </div>
+    </header>
+    <main>
+        <section class="access-section">
+            <div class="access-heading">
+                <p class="impact"><span></span>Protótipo e código-fonte</p>
+                <h1 class="title">Do conceito<br><span class="differ-font">ao seu celular.</span></h1>
+                <p class="color-grey">Instale o protótipo para navegar pelo SnapNote como se ele já estivesse no seu
+                    bolso, ou explore o código que dá vida ao projeto.</p>
+            </div>
+
+            <div class="access-cards">
+                <article class="access-card prototype">
+                    <h2>Protótipo</h2>
+                    <p>Navegue pelas telas de captura, biblioteca e lembretes e sinta como o SnapNote organiza suas
+                        anotações.</p>
+                    <a class="access-link" href="./downloads/snapnote-0.1.apk" download type="application/vnd.android.package-archive">Baixar APK para Android</a>
+                    <p class="access-note">Versão de teste 0.1, com 46 MB. Ao abrir o arquivo no celular, permita a
+                        instalação de apps de fontes desconhecidas.</p>
+                    <img src="./images/prot.png" alt="Tela inicial do protótipo do SnapNote">
+                </article>
+
+                <article class="access-card code">
+                    <svg width="40" height="40" viewBox="0 0 16 16" fill="currentColor" aria-hidden="true"
+                        xmlns="http://www.w3.org/2000/svg">
+                        <path
+                            d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
+                    </svg>
+                    <h2>Código-fonte</h2>
+                    <p>Veja como o SnapNote foi construído e acompanhe a evolução do projeto no GitHub.</p>
+                    <a class="access-link" href="https://github.com/Fiap-ES/SnapNote" target="_blank"
+                        rel="noopener noreferrer">Abrir no GitHub</a>
+                </article>
+            </div>
+        </section>
+    </main>
+    <footer class="site-footer">
+        <div class="footer-brand">
+            <a href="index.html#top" class="footer-logo">
+                <img src="./images/logo.png" alt="Logotipo do SnapNote">
+                <span>Snap<span>Note</span></span>
+            </a>
+            <p>Fotografe. Organize. Reencontre.</p>
+        </div>
+
+        <nav class="footer-column" aria-label="Navegação principal">
+            <a href="index.html#top">A solução</a>
+            <a href="index.html#galeria">Galeria</a>
+            <a href="experimente.html">Experimente</a>
+        </nav>
+
+        <nav class="footer-column" aria-label="Navegação complementar">
+            <a href="index.html#publico">Público-alvo</a>
+            <a href="index.html#equipe">Equipe</a>
+        </nav>
+
+        <div class="footer-copy">
+            <p>Challenge Front-end Design</p>
+            <p>© 2026 SnapNote</p>
+        </div>
+    </footer>
+    <script src="./script/script.js"></script>
+</body>
+
+</html>
